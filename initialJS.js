@@ -55,30 +55,74 @@ groceryArray[2] = groceryKiwi;
 //Calling it outsdie to make sure that sum can also use it
 var itemClass = document.getElementsByClassName("col-lg-6");
 
-groceryArray.forEach(function(groceryFunction){
+var groceryArrayCalled = function () {groceryArray.forEach(function(groceryFunction){
   console.log("Name: " +groceryFunction.name + " Price: $"+groceryFunction.price+".00");
   sum += groceryFunction.price;
   //Item
   var itemName = document.createElement("h4");
 
   itemName.textContent = "The grocery item " + groceryFunction.name + " has a price of $"+groceryFunction.price+".00";
+
 //it is an array and a square bracket needs to be called
   itemClass[0].appendChild(itemName);
+
   //Price
   //var itemPrice = document.createElement("p");
   //itemPrice.textContent = groceryFunction.price;
   //itemName.appendChild(itemPrice);
 
-});
+});};
+groceryArrayCalled();
+
+
+//hmmm adding that removed my sum, might need to do another funciton to call the sum?
+//for (var i; i < groceryArrayCalled().length; i++){
+//  sum += groceryFunction.price;
+//}
+
 //sum
 var totalPrice = document.createElement("h4");
 totalPrice.textContent = "Total Price: $"+sum+".00";
 itemClass[0].appendChild(totalPrice);
 
-var submission = document.getElementsByClassName("btn");
-submission.addEventListner('click', addToObject);
+// Add in from Adam's example
+var addItem = function addItem (){
+var newItem = document.getElementById('newItem').value;
+var newPrice = document.getElementById('newPrice').value;
 
-function
+var addedItems = {
+  name: newItem,
+  price: newPrice
+};
+//New array for addign at end
+var addedItemsArray = [];
+
+groceryArray.push(addedItems);
+//adding to new array too
+addedItemsArray.push(addedItems);
+
+//creating new appendChild for array
+var itemNameAdd = document.createElement("h4");
+
+itemNameAdd.textContent = "The grocery item " + addedItemsArray.name + " has a price of $"+addedItemsArray.price+".00";
+
+//it is an array and a square bracket needs to be called
+itemNameAdd[0].appendChild(addedItemsArray);
+
+//new item with text content plus names and append child and then add the appending bracket
+//total.textcontent =total variable
+//create append, push, then refresh total
+};
+totalPrice;
+  //groceryArray.push(addItem); //maybe?
+//replace child?
+
+//
+
+//var submission = document.getElementsByClassName("btn");
+//submission.addEventListner('click', addItem);
+//onclick onclick="addItem ()"
+
 
 
 //console.log("Total Price: $"+sum+".00");
