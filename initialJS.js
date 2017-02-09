@@ -80,10 +80,10 @@ groceryArrayCalled();
 //  sum += groceryFunction.price;
 //}
 
-//sum
-var totalPrice = document.createElement("h4");
+//sum not workings
+var totalPrice =  function () {totalPrice = document.createElement("h4");
 totalPrice.textContent = "Total Price: $"+sum+".00";
-itemClass[0].appendChild(totalPrice);
+itemClass[0].appendChild(totalPrice)};
 
 // Add in from Adam's example
 var addItem = function addItem (){
@@ -95,25 +95,32 @@ var addedItems = {
   price: newPrice
 };
 //New array for addign at end
-var addedItemsArray = [];
 
+var itemNameAdd = document.createElement("h4");
+itemNameAdd.textContent = "The grocery item " + addedItems.name + " has a price of $"+addedItems.price+".00";
+itemClass[0].appendChild(itemNameAdd);
 groceryArray.push(addedItems);
+sum+=addedItems.price;
+//new function
+var reAddSum = function (){
+  for(var i = 0; i < groceryArray.length;i++)
+  sum+=groceryArray.price;
+  return sum;
+}
+totalPrice();
 //adding to new array too
-addedItemsArray.push(addedItems);
+
 
 //creating new appendChild for array
-var itemNameAdd = document.createElement("h4");
 
-itemNameAdd.textContent = "The grocery item " + addedItemsArray.name + " has a price of $"+addedItemsArray.price+".00";
 
 //it is an array and a square bracket needs to be called
-itemNameAdd[0].appendChild(addedItemsArray);
 
+};
+totalPrice();
 //new item with text content plus names and append child and then add the appending bracket
 //total.textcontent =total variable
 //create append, push, then refresh total
-};
-totalPrice;
   //groceryArray.push(addItem); //maybe?
 //replace child?
 
