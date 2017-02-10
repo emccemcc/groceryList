@@ -23,7 +23,12 @@ groceryArray[2] = groceryKiwi;
 
 var itemClass = document.getElementsByClassName("col-lg-6");
 var footer = document.getElementsByClassName("footer");
-
+var totalPrice1 = document.createElement("h4");
+totalPrice1.className = "sum";
+  totalPrice1.textContent = "Total Price: $"+sum+".00";
+  footer[0].appendChild(totalPrice1);
+//  totalPrice.textContent = "Total Price: $"+sum+".00";
+  //footer[0].replaceChild(totalPrice,totalPrice);
 
 
 var groceryArrayCalled = function () {groceryArray.forEach(function(groceryFunction){
@@ -49,11 +54,7 @@ groceryArrayCalled();
 
 
 //sum not workings
-var totalPrice =  function () {totalPrice = document.createElement("h4");
-totalPrice.textContent = "Total Price: $"+sum+".00";
-  footer[0].appendChild(totalPrice);
 
-};
 
 
 
@@ -75,29 +76,31 @@ itemClass[0].appendChild(itemNameAdd);
 groceryArray.push(addedItems);
 
 //remove from input
-sum+=addedItems.price;
+sum+=parseInt(addedItems.price);
+totalPrice1.textContent = "Total Price: $"+sum+".00";
 
 
-var totalPriceAmmended = function () {
-  //totalPriceAmmended = document.createElement("h4");
-  totalPriceAmmended.textContent = "Total Price: $"+sum+".00";
-  //totalPrice.textContent.replace(totalPrice.textContent,totalPriceAmmended.textcontent);
-  //totalPrice().replace(totalPrice(),totalPriceAmmended());
-  //footer[0].replaceChild(totalPrice,totalPriceAmmended);
-footer[1].appendChild(totalPriceAmmended);
-}
-totalPriceAmmended();
+
+
+
+
 
 document.getElementById("newItem").value="";
 document.getElementById("newPrice").value="";
-
+//totalPrice.Value="";
 
 
 
 };
-totalPrice();
+//
+
+  //replace
+
+
+
+
 //new item with text content plus names and append child and then add the appending bracket
-//total.textcontent =total variable
+
 //create append, push, then refresh total
   //groceryArray.push(addItem); //maybe?
 //replace child?
